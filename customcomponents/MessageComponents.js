@@ -6,9 +6,6 @@ import {
 } from 'react-native'
 
 class MessageComponents extends Component {
-  // constructor(props) {
-  //   super(props)
-  // }
   
   render () {
     console.log("child rendering")
