@@ -10,7 +10,8 @@ import React, { Component } from 'react'
 import {
   View,
   TextInput,
-  StyleSheet
+  StyleSheet,
+  Text
 } from 'react-native'
 import MessageComponents from './customcomponents/MessageComponents'
 class App extends Component {
@@ -18,7 +19,8 @@ class App extends Component {
   constructor (props) {
     super(props)
     this.state = {
-      message: 'Default message need to be changed'
+      message: 'Default message need to be changed',
+      messageFromClient:  'demo text'
     }
     
   }
@@ -27,6 +29,13 @@ class App extends Component {
     this.setState({
       message: msg
     })
+  }
+
+  receiveMessageFromChild = (messageFromChild) => {
+    this.setState({
+      messageFromClient: messageFromChild
+    })
+    console.log(messageFromChild)
   }
   
   render () {
@@ -37,7 +46,8 @@ class App extends Component {
       style={{ height: 40, borderColor: 'gray', borderWidth: 1 }}
       onChangeText={text => this.sendMessage(text)}
     />
-    <MessageComponents style = {styles.bigBlue} message={this.state.message} />
+    <MessageComponents style = {styles.bigBlue} messageFromChild={this.receiveMessageFromChild} message={this.state.message} />
+    <Text> {this.state.messageFromClient} </Text>
       </View>
     )
   }

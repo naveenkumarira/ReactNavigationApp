@@ -1,14 +1,23 @@
 import React, { Component } from 'react'
 import {
   View,
-  Text
+  Text,
+  TextInput
 } from 'react-native'
 
 class MessageComponents extends Component {
+  // constructor(props) {
+  //   super(props)
+  // }
+  
   render () {
+    console.log("child rendering")
     return (
       <View>
         <Text>{this.props.message}</Text>
+        <TextInput
+      style={{ height: 40, borderColor: 'gray', borderWidth: 1 }}
+      onChangeText={text => this.props.messageFromChild(text)}/>
       </View>
     )
   }
