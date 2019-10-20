@@ -13,11 +13,11 @@ import {
   StyleSheet,
   Text
 } from 'react-native'
-import MainComponent from './customcomponents/MainComponent'
+import FlexExampleComponent from './customcomponents/FlexExampleComponent'
 class App extends Component {
 render() {
   return (
-    <MainComponent />
+    <FlexExampleComponent />
   )
 }
 }
